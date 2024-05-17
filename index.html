@@ -1,18 +1,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Интерактивные кнопки</title>
 <style>
+    .image {
+      display: none;
+      width: 300px;
+    }
     .buttonras {
         font-size: large;
-        
+        background-color: #f8f40c;
         margin-left: 50px;
         margin-top: 100px;
         margin-left: 100px;
     }
     #button3:hover {
-        animation: moveButton 2s infinite;
+        animation: moveButton 2s infinite;  
     }
     @keyframes moveButton {
         0% { transform: translateX(0); }
@@ -22,23 +24,31 @@
 </style>
 </head>
 <body>
-    <button onclick="showImage()" class="buttonras">Кнопка 1</button>
+    <button class="buttonras" onclick="image('image')">Изображение</button>
+    <div >
+        <img src='sys.png' style="display: none" id="image">
+    </div>
     
-    <button disabled class="buttonras">Кнопка 2</button>
-    <button id="button3" class="buttonras">Кнопка 3</button>
-    <button onclick="growButton(this)" class="buttonras">Кнопка 4</button>
-    <button onclick="rotateButton(this)" class="buttonras">Кнопка 5</button>
+    <button disabled class="buttonras">Недействительна</button>
+    <button id="button3" class="buttonras">Убегает</button>
+    <button onclick="growButton(this)" class="buttonras">Увеличивается</button>
+    <button onclick="rotateButton(this)" class="buttonras">Поварачивается</button>
 
     <script>
-        function showImage() {
-            alert('Открыть изображение');
+        function image(id) 
+        {
+        elem = document.getElementById(id); 
+        state = elem.style.display; 
+        if (state == '') elem.style.display = 'none'; 
+        else elem.style.display = ''; 
         }
-
-        function growButton(button) {
+        function growButton(button) 
+        {
             button.style.transform = 'scale(1.5)';
+            
         }
-
-        function rotateButton(button) {
+        function rotateButton(button) 
+        {
             button.style.transform = 'rotate(90deg)';
         }
     </script>
