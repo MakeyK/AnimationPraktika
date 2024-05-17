@@ -1,13 +1,10 @@
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <style>
-    .image {
-      display: none;
-      width: 300px;
-    }
     .buttonras {
         font-size: large;
+        color:  rgb(36, 32, 122);
         background-color: #f8f40c;
         margin-left: 50px;
         margin-top: 100px;
@@ -24,15 +21,15 @@
 </style>
 </head>
 <body>
-    <button class="buttonras" onclick="image('image')">Изображение</button>
-    <div >
-        <img src='sys.png' style="display: none" id="image">
+    <button class="buttonras" onclick="image('image')">Логотип "Уралан"</button>
+    <div>
+        <img src='yralan.png' style="display: none;" id="image">
     </div>
     
     <button disabled class="buttonras">Недействительна</button>
-    <button id="button3" class="buttonras">Убегает</button>
-    <button onclick="growButton(this)" class="buttonras">Увеличивается</button>
-    <button onclick="rotateButton(this)" class="buttonras">Поварачивается</button>
+    <button id="button3" class="buttonras">Футболисты так убегают от защитников</button>
+    <button onclick="growButton(this)" class="buttonras">Мяч в глазах увеличивается</button>
+    <button onclick="rotateButton(this)" class="buttonras">Игроки в борьбе</button>
 
     <script>
         function image(id) 
@@ -45,7 +42,6 @@
         function growButton(button) 
         {
             button.style.transform = 'scale(1.5)';
-            
         }
         function rotateButton(button) 
         {
