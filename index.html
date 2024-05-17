@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Интерактивные кнопки</title>
+<style>
+    .buttonras {
+        font-size: large;
+        
+        margin-left: 50px;
+        margin-top: 100px;
+        margin-left: 100px;
+    }
+    #button3:hover {
+        animation: moveButton 2s infinite;
+    }
+    @keyframes moveButton {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(100px); }
+        100% { transform: translateX(0); }
+    }
+</style>
+</head>
+<body>
+    <button onclick="showImage()" class="buttonras">Кнопка 1</button>
+    
+    <button disabled class="buttonras">Кнопка 2</button>
+    <button id="button3" class="buttonras">Кнопка 3</button>
+    <button onclick="growButton(this)" class="buttonras">Кнопка 4</button>
+    <button onclick="rotateButton(this)" class="buttonras">Кнопка 5</button>
+
+    <script>
+        function showImage() {
+            alert('Открыть изображение');
+        }
+
+        function growButton(button) {
+            button.style.transform = 'scale(1.5)';
+        }
+
+        function rotateButton(button) {
+            button.style.transform = 'rotate(90deg)';
+        }
+    </script>
+</body>
+</html>
